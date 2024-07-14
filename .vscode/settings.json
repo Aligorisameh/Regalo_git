@@ -1,0 +1,4 @@
+{
+    "application.experimental.rendererProfiling": false,
+    "terminal.integrated.sendKeybindingsToShell": false
+}
