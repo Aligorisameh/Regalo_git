@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "523927463635",
+    "firebase_url": "https://regalofficial-daf6c-default-rtdb.firebaseio.com",
+    "project_id": "regalofficial-daf6c",
+    "storage_bucket": "regalofficial-daf6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523927463635:android:abeac6361b59c14d929626",
+        "android_client_info": {
+          "package_name": "com.example.regalofficial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPz6rE3a3z9NYkaBupqzozZBgpYe5gdQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
