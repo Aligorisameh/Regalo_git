@@ -79,6 +79,7 @@ dependencies:
   lottie: ^3.0.0
   twilio_flutter: 0.0.9
   cloud_functions: 4.7.6
+  appcenter_sdk_flutter: ^0.5.1
   
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +8,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:regalofficial/app_localizations.dart';
 import 'package:regalofficial/routes.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-// import 'intro_screen.dart';
 import 'package:regalofficial/Homepage.dart';
+import 'package:appcenter_sdk_flutter/appcenter_sdk_flutter.dart'; // Import unique pour App Center
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -28,6 +29,12 @@ Future<void> main() async {
   FirebaseAuth.instance.setLanguageCode('en');
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await _initializeLocalNotifications();
+
+  // Initialize App Center only for iOS
+  if (Platform.isIOS) {
+    await AppCenter.start(secret: "YOUR_IOS_APP_SECRET");
+  }
+
   runApp(const MyApp());
 }
 
@@ -42,6 +49,7 @@ Future<void> _initializeLocalNotifications() async {
 
   final InitializationSettings initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
+    iOS: DarwinInitializationSettings(), // Mis à jour pour iOS
   );
 
   await flutterLocalNotificationsPlugin.initialize(initializationSettings);

@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  appcenter_sdk_flutter:
+    dependency: "direct main"
+    description:
+      name: appcenter_sdk_flutter
+      sha256: "5877f11fda76979689592597a593c67188cc5bfe16e132351c53f9d53589317e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.1"
   archive:
     dependency: transitive
     description:
