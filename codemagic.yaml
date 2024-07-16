@@ -1,19 +1,18 @@
 workflows:
-  flutter-workflow:
-    name: Flutter Workflow
+  build-web:
+    name: Build Web
     max_build_duration: 60
     environment:
-      flutter: stable
-      xcode: latest
+      flutter: stable  # Utilise la version stable de Flutter
     triggering:
       events:
-        - push
+        - push         # Déclenche une construction sur chaque push
     scripts:
       - name: Installer les dépendances
         script: |
-          flutter pub get
-      - name: Construire pour l'émulateur iOS
+          flutter pub get  # Installe les dépendances Flutter
+      - name: Construire l'application Web
         script: |
-          flutter build ios --simulator --no-codesign
+          flutter build web --release  # Construire l'application web en mode release
     artifacts:
-      - build/ios/iphonesimulator/*.app
+      - build/web  # Spécifie l'emplacement des artefacts générés
