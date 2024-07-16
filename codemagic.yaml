@@ -12,10 +12,8 @@ workflows:
       - name: Install dependencies
         script: |
           flutter pub get
-      - name: Build iOS
+      - name: Build iOS for simulator
         script: |
-          flutter build ios --release --no-codesign
-          xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -sdk iphoneos -configuration Release archive -archivePath $CM_BUILD_DIR/ios/Runner.xcarchive
-          xcodebuild -exportArchive -archivePath $CM_BUILD_DIR/ios/Runner.xcarchive -exportOptionsPlist ios/Flutter/ExportOptions.plist -exportPath $CM_BUILD_DIR/ios/ipa
+          flutter build ios --simulator
     artifacts:
-      - $CM_BUILD_DIR/ios/ipa/*.ipa
+      - build/ios/iphonesimulator/*.app
