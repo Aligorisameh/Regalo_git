@@ -9,11 +9,11 @@ workflows:
       events:
         - push
     scripts:
-      - name: Install dependencies
+      - name: Installer les dépendances
         script: |
           flutter pub get
-      - name: Build iOS for simulator
+      - name: Construire pour l'émulateur iOS
         script: |
-          flutter build ios --simulator
+          flutter build ios --simulator --no-codesign
     artifacts:
       - build/ios/iphonesimulator/*.app
