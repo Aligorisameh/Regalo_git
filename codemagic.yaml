@@ -13,6 +13,6 @@ workflows:
           flutter pub get  # Installe les dépendances Flutter
       - name: Construire l'application Web
         script: |
-          flutter build web --release  # Construire l'application web en mode release
+          flutter build web --release  # Construire l'application web en mode releases
     artifacts:
       - build/web  # Spécifie l'emplacement des artefacts générés
